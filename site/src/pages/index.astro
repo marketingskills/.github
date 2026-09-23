@@ -1,0 +1,61 @@
+---
+import Layout from "../layouts/Layout.astro";
+import SkillCard from "../components/SkillCard.astro";
+import { skills } from "../data/skills";
+---
+<Layout>
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <p class="kicker">Open source · agent native · practical</p>
+        <h1>Marketing operators for AI agents.</h1>
+        <p class="hero-copy">
+          Give Claude Code, Codex, Gemini, OpenCode and other agents repeatable methods for SEO,
+          content, growth, GTM and creative work.
+        </p>
+        <div class="actions">
+          <a class="button primary" href="/skills/">Browse operators</a>
+          <a class="button" href="https://github.com/marketingskills">View on GitHub ↗</a>
+        </div>
+      </div>
+      <aside class="terminal-card" aria-label="Example install command">
+        <div class="terminal-top"><span></span><span></span><span></span></div>
+        <p class="terminal-label">Install SEO Operator</p>
+        <pre><code>curl -fsSL https://marketingskills.net/seo | bash</code></pre>
+        <p class="terminal-note">Or use <code>npx skills add marketingskills/…</code> for individual operators.</p>
+      </aside>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="section-heading">
+        <div>
+          <p class="kicker">Operators</p>
+          <h2>Give the agent a method, not just a prompt.</h2>
+        </div>
+        <p>Each project packages judgement, workflow, references and optional deterministic tooling around a real marketing job.</p>
+      </div>
+      <div class="skill-grid">
+        {skills.map((skill) => <SkillCard skill={skill} />)}
+      </div>
+    </div>
+  </section>
+
+  <section class="section contrast">
+    <div class="wrap split">
+      <div>
+        <p class="kicker">Agent discovery</p>
+        <h2>Built for humans to browse and agents to read.</h2>
+      </div>
+      <div class="stack">
+        <p>The same catalogue is exposed as structured JSON and <code>llms.txt</code>, so an agent can discover the right operator for a task.</p>
+        <pre class="prompt"><code>Browse https://marketingskills.net/skills/ and choose the appropriate Marketing Skills operator for this task.</code></pre>
+        <div class="actions">
+          <a class="button" href="/catalog.json">catalog.json</a>
+          <a class="button" href="/llms.txt">llms.txt</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>

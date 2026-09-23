@@ -1,0 +1,56 @@
+---
+import "../styles/global.css";
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = "Marketing Skills — Open-source marketing operators for AI agents",
+  description = "Open-source operators for SEO, content, growth, GTM and creative work. Built for Claude Code, Codex, Gemini, OpenCode and other AI agents.",
+} = Astro.props;
+
+const canonical = new URL(Astro.url.pathname, Astro.site);
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <meta name="generator" content={Astro.generator} />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <title>{title}</title>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="wrap header-inner">
+        <a class="brand" href="/">Marketing Skills</a>
+        <nav aria-label="Main navigation">
+          <a href="/skills/">Skills</a>
+          <a href="/catalog.json">API</a>
+          <a href="https://github.com/marketingskills">GitHub ↗</a>
+        </nav>
+      </div>
+    </header>
+    <main>
+      <slot />
+    </main>
+    <footer>
+      <div class="wrap footer-inner">
+        <p>Open-source marketing operators for AI agents.</p>
+        <div>
+          <a href="/skills/">Catalogue</a>
+          <a href="/llms.txt">llms.txt</a>
+          <a href="https://github.com/marketingskills">GitHub</a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

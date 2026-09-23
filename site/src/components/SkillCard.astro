@@ -1,0 +1,15 @@
+---
+import type { Skill } from "../data/skills";
+
+const { skill } = Astro.props as { skill: Skill };
+---
+<article class="skill-card">
+  <div class="eyebrow">{skill.eyebrow}</div>
+  <h3><a href={`/skills/${skill.slug}/`}>{skill.name}</a></h3>
+  <p class="tagline">{skill.tagline}</p>
+  <p>{skill.summary}</p>
+  <div class="chips">
+    {skill.categories.map((category) => <span>{category}</span>)}
+  </div>
+  <a class="text-link" href={`/skills/${skill.slug}/`}>View operator →</a>
+</article>

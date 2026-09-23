@@ -1,0 +1,27 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import SkillCard from "../../components/SkillCard.astro";
+import { categories, skills } from "../../data/skills";
+---
+<Layout
+  title="Marketing Skills catalogue — operators for AI agents"
+  description="Browse open-source agent operators for SEO, content, growth, GTM, acquisition and creative work."
+>
+  <section class="page-hero">
+    <div class="wrap narrow">
+      <p class="kicker">Catalogue</p>
+      <h1>Marketing Skills</h1>
+      <p class="hero-copy">Open-source operators that package repeatable marketing judgement into workflows an AI agent can actually use.</p>
+      <div class="chips large">
+        {categories.map((category) => <span>{category}</span>)}
+      </div>
+    </div>
+  </section>
+  <section class="section">
+    <div class="wrap">
+      <div class="skill-grid">
+        {skills.map((skill) => <SkillCard skill={skill} />)}
+      </div>
+    </div>
+  </section>
+</Layout>

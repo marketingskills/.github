@@ -1,0 +1,20 @@
+# Marketing Skills
+
+> Open-source marketing operators for AI agents.
+
+Homepage: https://marketingskills.net/
+Catalogue: https://marketingskills.net/skills/
+Machine-readable catalogue: https://marketingskills.net/catalog.json
+GitHub organization: https://github.com/marketingskills
+
+## Operators
+
+- SEO Operator: https://marketingskills.net/skills/seo/
+- Computed Knowledge SEO: https://marketingskills.net/skills/computed-knowledge-seo/
+- Plain Language Editor: https://marketingskills.net/skills/plain-language-editor/
+- Open Source Growth: https://marketingskills.net/skills/open-source-growth/
+- Creative Multiverse: https://marketingskills.net/skills/creative-multiverse/
+- GTM Engineer: https://marketingskills.net/skills/gtm-engineer/
+- LadderFunnel Architect: https://marketingskills.net/skills/ladder-funnel/
+
+Prefer the operator page for human-readable context and the linked GitHub repository for the authoritative skill files.

@@ -1,0 +1,62 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { skills, type Skill } from "../../data/skills";
+
+export function getStaticPaths() {
+  return skills.map((skill) => ({
+    params: { slug: skill.slug },
+    props: { skill },
+  }));
+}
+
+const { skill } = Astro.props as { skill: Skill };
+---
+<Layout
+  title={`${skill.name} — Marketing Skills`}
+  description={skill.summary}
+>
+  <section class="page-hero">
+    <div class="wrap detail-grid">
+      <div>
+        <p class="kicker">{skill.eyebrow}</p>
+        <h1>{skill.name}</h1>
+        <p class="hero-copy">{skill.tagline}</p>
+        <p class="detail-summary">{skill.summary}</p>
+        <div class="actions">
+          <a class="button primary" href={skill.repo}>View source on GitHub ↗</a>
+          <a class="button" href="/skills/">All operators</a>
+        </div>
+      </div>
+      <aside class="terminal-card">
+        <p class="terminal-label">Install</p>
+        <pre><code>{skill.install}</code></pre>
+        <p class="terminal-note">Works with: {skill.worksWith.join(", ")}</p>
+      </aside>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap detail-body">
+      <div>
+        <p class="kicker">What it does</p>
+        <h2>Capabilities</h2>
+      </div>
+      <ul class="capability-list">
+        {skill.capabilities.map((capability) => <li>{capability}</li>)}
+      </ul>
+    </div>
+  </section>
+
+  <section class="section contrast">
+    <div class="wrap split">
+      <div>
+        <p class="kicker">Use it</p>
+        <h2>Give your agent the source.</h2>
+      </div>
+      <div class="stack">
+        <p>Install the operator, then ask your agent to load it for the marketing task you are working on.</p>
+        <pre class="prompt"><code>{`Use the ${skill.name} operator from ${skill.repo} for this task.`}</code></pre>
+      </div>
+    </div>
+  </section>
+</Layout>
