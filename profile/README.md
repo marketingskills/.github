@@ -18,7 +18,7 @@ Give Claude Code, Codex, Gemini, OpenCode, Hermes and other coding agents repeat
 
 | Project | Type | What it does | Install |
 |---|---|---|---|
-| [SEO Operator](https://github.com/marketingskills/seo) | Skill pack | Diagnose SEO problems, find growth opportunities, create briefs and run closed-loop SEO workflows. | `curl -fsSL https://marketingskills.net/seo \| bash` |
+| [SEO Operator](https://github.com/marketingskills/seo) | Skill pack | 30 SEO, AEO and GEO skills: AI-crawler foundation scripts, deploy regression snapshots, Tier-3 safety hooks, decision pages, Bing AI visibility and live GSC/GA4 via RefreshAgent (plus [ChatGPT App](https://chatgpt.com/plugins/plugin_asdk_app_6ac5ec2359dc8191899aeb18f6d6db6e)). | `npx skills add marketingskills/seo` |
 | [Computed Knowledge SEO](https://github.com/marketingskills/computed-knowledge-seo) | Skill pack | Combine independent datasets to create new, defensible facts and differentiated SEO/AEO pages. | `npx skills add marketingskills/computed-knowledge-seo` |
 
 ### Acquisition, Growth & GTM
