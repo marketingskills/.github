@@ -2,6 +2,7 @@ export type Skill = {
   slug: string;
   name: string;
   eyebrow: string;
+  kind: "Single operator" | "Skill pack";
   tagline: string;
   summary: string;
   repo: string;
@@ -11,18 +12,31 @@ export type Skill = {
   capabilities: string[];
 };
 
+export const curator = {
+  name: "Duncan Trevithick",
+  role: "Creator and curator",
+  website: "https://ukseoconsultant.com",
+  about: "https://ukseoconsultant.com/about",
+  personId: "https://ukseoconsultant.com/about#duncan-trevithick",
+  contact: "https://ukseoconsultant.com/contact",
+  github: "https://github.com/dunctk",
+  linkedin: "https://uk.linkedin.com/in/duncantrevithick",
+  youtube: "https://www.youtube.com/@DuncanTr",
+};
+
 export const skills: Skill[] = [
   {
     slug: "seo",
     name: "SEO Operator",
     eyebrow: "SEO",
+    kind: "Skill pack",
     tagline: "Turn your coding agent into an SEO operator.",
     summary:
       "Diagnose traffic drops, find keyword opportunities, write refresh briefs, prioritize work and run closed-loop SEO growth workflows.",
     repo: "https://github.com/marketingskills/seo",
     install: "curl -fsSL https://marketingskills.net/seo | bash",
     categories: ["SEO", "Analytics", "Content"],
-    worksWith: ["Claude Code", "Codex", "Hermes", "OpenClaw"],
+    worksWith: ["Claude Code", "Codex", "Gemini", "OpenCode", "Hermes", "OpenClaw"],
     capabilities: [
       "Traffic-decay and keyword-opportunity diagnosis",
       "Technical SEO triage and cannibalization checks",
@@ -35,6 +49,7 @@ export const skills: Skill[] = [
     slug: "computed-knowledge-seo",
     name: "Computed Knowledge SEO",
     eyebrow: "SEO + data",
+    kind: "Skill pack",
     tagline: "Compute, don't summarize.",
     summary:
       "Design SEO and AEO systems around novel, defensible knowledge produced from multiple datasets instead of scaled filler.",
@@ -51,9 +66,30 @@ export const skills: Skill[] = [
     ],
   },
   {
+    slug: "brand-alchemy",
+    name: "Brand Alchemy",
+    eyebrow: "Brand & positioning",
+    kind: "Single operator",
+    tagline: "Think like Darwin, not a benchmarking spreadsheet.",
+    summary:
+      "Walk an 8-node behavioral branding and positioning decision tree grounded in Rory Sutherland, Byron Sharp, Roger Martin, Will Guidara and Guru Madhavan.",
+    repo: "https://github.com/marketingskills/brand-alchemy",
+    install: "npx skills add marketingskills/brand-alchemy",
+    categories: ["Brand", "Positioning", "Strategy"],
+    worksWith: ["Claude Code", "Codex", "Gemini", "OpenCode"],
+    capabilities: [
+      "Split greenfield launches from repositioning while protecting working brand assets",
+      "Rewrite inherited category questions instead of chasing 10% better specs",
+      "Reverse-benchmark competitor blind spots and lock three refused metrics",
+      "Strip buying friction and fix option-to-obligation channel traps",
+      "Validate every gate with a zero-dependency Python CLI and behavioral experiments",
+    ],
+  },
+  {
     slug: "plain-language-editor",
     name: "Plain Language Editor",
     eyebrow: "Content",
+    kind: "Single operator",
     tagline: "Make AI-written content clear, human and easy to follow.",
     summary:
       "Edit for comprehension, substance, truth and length rather than only removing surface-level AI tells.",
@@ -73,6 +109,7 @@ export const skills: Skill[] = [
     slug: "open-source-growth",
     name: "Open Source Growth",
     eyebrow: "Growth",
+    kind: "Skill pack",
     tagline: "Give your open-source repo a growth team.",
     summary:
       "Audit adoption blockers, improve packaging, build launch material, find ecosystem inclusion opportunities and create a trustworthy install flow.",
@@ -92,6 +129,7 @@ export const skills: Skill[] = [
     slug: "creative-multiverse",
     name: "Creative Multiverse",
     eyebrow: "Creative",
+    kind: "Single operator",
     tagline: "Explore beyond the most obvious creative answer.",
     summary:
       "Map familiar attractors, sample less-obvious creative decisions and protect coherent consequences through revision.",
@@ -111,6 +149,7 @@ export const skills: Skill[] = [
     slug: "gtm-engineer",
     name: "GTM Engineer",
     eyebrow: "Go to market",
+    kind: "Skill pack",
     tagline: "Evidence-first go-to-market workflows for AI agents.",
     summary:
       "Build TAMs, find public buying signals, enrich and score accounts, qualify inbound and draft human-approved outreach.",
@@ -130,19 +169,40 @@ export const skills: Skill[] = [
     slug: "ladder-funnel",
     name: "LadderFunnel Architect",
     eyebrow: "Acquisition",
-    tagline: "Design paid acquisition funnels with a product ladder.",
+    kind: "Single operator",
+    tagline: "Design and self-host paid acquisition funnels with a product ladder.",
     summary:
-      "Build offer stacks, funnel copy, ad strategy and email ascension around a low-ticket entry product and recurring upsell.",
+      "Build self-hosted offer stacks, 4-page funnel copy, ad strategy, 30-day email ascension and portable Funnel Blocks JSON configs for your own stack.",
     repo: "https://github.com/marketingskills/ladder-funnel",
     install: "npx skills add marketingskills/ladder-funnel",
     categories: ["Acquisition", "Funnels", "Copy"],
-    worksWith: ["Claude", "Codex", "Gemini"],
+    worksWith: ["Claude Code", "Codex", "Gemini", "OpenCode"],
     capabilities: [
-      "Offer-stack design",
-      "Funnel-page copy",
-      "Paid social creative strategy",
-      "Email ascension sequences",
-      "Portable funnel build guidance",
+      "Offer-stack design ($7 intro + $27 bump + recurring upsell, or $27 no-bump)",
+      "4-page funnel copy using the Transformation Framework",
+      "Paid social creative strategy and briefs",
+      "30-day email ascension sequences",
+      "Self-hosted Funnel Blocks JSON spec with Stripe Checkout and webhooks",
+    ],
+  },
+  {
+    slug: "ai-first-saas-interface",
+    name: "AI-First SaaS Interface Architect",
+    eyebrow: "Product UX",
+    kind: "Single operator",
+    tagline: "Design AI-native SaaS interfaces where visual UI and AI each do their job.",
+    summary:
+      "Specify, critique and design AI-first product interfaces, first-run onboarding flows and human-AI responsibility boundaries.",
+    repo: "https://github.com/marketingskills/ai-first-saas-interface",
+    install: "npx skills add marketingskills/ai-first-saas-interface",
+    categories: ["Product", "UX", "Onboarding"],
+    worksWith: ["Claude Code", "Codex", "Gemini", "OpenCode"],
+    capabilities: [
+      "Modality decision matrices (where UI beats chat and vice versa)",
+      "Human-AI responsibility and approval-gate mapping",
+      "AI-native first-run onboarding and activation flows",
+      "Interface critique rubrics and reusable interaction patterns",
+      "Production-ready interface specification templates",
     ],
   },
 ];

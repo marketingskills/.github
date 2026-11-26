@@ -1,6 +1,6 @@
 ---
 import Layout from "../../layouts/Layout.astro";
-import { skills, type Skill } from "../../data/skills";
+import { curator, skills, type Skill } from "../../data/skills";
 
 export function getStaticPaths() {
   return skills.map((skill) => ({
@@ -12,13 +12,13 @@ export function getStaticPaths() {
 const { skill } = Astro.props as { skill: Skill };
 ---
 <Layout
-  title={`${skill.name} — Marketing Skills`}
+  title={`${skill.name} | Marketing Skills`}
   description={skill.summary}
 >
   <section class="page-hero">
     <div class="wrap detail-grid">
       <div>
-        <p class="kicker">{skill.eyebrow}</p>
+        <p class="kicker">{skill.eyebrow} · {skill.kind}</p>
         <h1>{skill.name}</h1>
         <p class="hero-copy">{skill.tagline}</p>
         <p class="detail-summary">{skill.summary}</p>
@@ -56,6 +56,12 @@ const { skill } = Astro.props as { skill: Skill };
       <div class="stack">
         <p>Install the operator, then ask your agent to load it for the marketing task you are working on.</p>
         <pre class="prompt"><code>{`Use the ${skill.name} operator from ${skill.repo} for this task.`}</code></pre>
+        <p>
+          Want this method implemented on your business or adapted into a private team skill pack?{" "}
+          <a href={`${curator.contact}?utm_source=marketingskills&utm_medium=skill_${skill.slug}`}>
+            Work with {curator.name} →
+          </a>
+        </p>
       </div>
     </div>
   </section>

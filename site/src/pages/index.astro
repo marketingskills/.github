@@ -1,7 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import SkillCard from "../components/SkillCard.astro";
-import { skills } from "../data/skills";
+import { curator, skills } from "../data/skills";
 ---
 <Layout>
   <section class="hero">
@@ -11,7 +11,7 @@ import { skills } from "../data/skills";
         <h1>Marketing operators for AI agents.</h1>
         <p class="hero-copy">
           Give Claude Code, Codex, Gemini, OpenCode and other agents repeatable methods for SEO,
-          content, growth, GTM and creative work.
+          brand positioning, content, growth, GTM and self-hosted funnels.
         </p>
         <div class="actions">
           <a class="button primary" href="/skills/">Browse operators</a>
@@ -20,9 +20,9 @@ import { skills } from "../data/skills";
       </div>
       <aside class="terminal-card" aria-label="Example install command">
         <div class="terminal-top"><span></span><span></span><span></span></div>
-        <p class="terminal-label">Install SEO Operator</p>
-        <pre><code>curl -fsSL https://marketingskills.net/seo | bash</code></pre>
-        <p class="terminal-note">Or use <code>npx skills add marketingskills/…</code> for individual operators.</p>
+        <p class="terminal-label">Install an operator</p>
+        <pre><code>npx skills add marketingskills/brand-alchemy</code></pre>
+        <p class="terminal-note">Or install the full SEO Operator pack with <code>curl -fsSL https://marketingskills.net/seo | bash</code>.</p>
       </aside>
     </div>
   </section>
@@ -54,6 +54,31 @@ import { skills } from "../data/skills";
         <div class="actions">
           <a class="button" href="/catalog.json">catalog.json</a>
           <a class="button" href="/llms.txt">llms.txt</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap split">
+      <div>
+        <p class="kicker">Created &amp; curated by {curator.name}</p>
+        <h2>Use the open-source operators, or hire the person who built them.</h2>
+      </div>
+      <div class="stack">
+        <p>
+          Marketing Skills is maintained by <a href={curator.about}><strong>{curator.name}</strong></a>,
+          an independent UK SEO and AEO consultant and builder of{" "}
+          <a href="https://refreshagent.com/?utm_source=marketingskills">RefreshAgent</a>. Every
+          operator here is MIT-licensed and free to inspect, fork and run with your own tools.
+        </p>
+        <p>
+          Need SEO or AEO executed directly on your business, or want a private operator pack wired
+          into your Search Console, CRM and CMS for your team?
+        </p>
+        <div class="actions">
+          <a class="button primary" href="https://ukseoconsultant.com/diagnosis?utm_source=marketingskills">Free 1-page SEO diagnosis</a>
+          <a class="button" href="https://ukseoconsultant.com/contact?utm_source=marketingskills">Custom operator pack</a>
         </div>
       </div>
     </div>

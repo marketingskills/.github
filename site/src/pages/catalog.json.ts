@@ -1,5 +1,5 @@
 import type { APIRoute } from "astro";
-import { skills } from "../data/skills";
+import { curator, skills } from "../data/skills";
 
 export const GET: APIRoute = () => {
   return new Response(
@@ -9,6 +9,7 @@ export const GET: APIRoute = () => {
         description: "Open-source marketing operators for AI agents.",
         homepage: "https://marketingskills.net",
         repository: "https://github.com/marketingskills",
+        curator,
         generated_from: "marketingskills/.github/site/src/data/skills.ts",
         skills,
       },
