@@ -42,7 +42,7 @@ export const skills: Skill[] = [
       "Technical SEO triage and cannibalization checks",
       "Content refresh and new-content briefs",
       "SEO prioritization and closed-loop growth",
-      "Optional live GSC and GA4 workflows",
+      "Optional 30-second live GSC and GA4 data bridge via RefreshAgent (free tier, no Google Cloud setup)",
     ],
   },
   {
